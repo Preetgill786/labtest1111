@@ -149,7 +149,7 @@
         <!--EditController-->
         <scene sceneID="tg5-4V-DKZ">
             <objects>
-                <viewController title="EditController" id="3dm-MF-Jo3" sceneMemberID="viewController">
+                <viewController title="EditController" id="3dm-MF-Jo3" customClass="EditItem" customModule="Labtest1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZU4-mS-obl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,7 +238,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FMJ-53-prz"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FSl-ga-f94"/>
+                    <navigationItem key="navigationItem" id="FSl-ga-f94">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hBw-F6-aI5">
+                            <connections>
+                                <action selector="editSave:" destination="3dm-MF-Jo3" id="ZLH-At-2Ex"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editAge" destination="11N-pr-ZmE" id="O1r-gZ-dWh"/>
+                        <outlet property="editDate" destination="7Oc-Ya-KpN" id="chW-XD-vEM"/>
+                        <outlet property="editFees" destination="eez-3c-Vke" id="9UC-o8-rbT"/>
+                        <outlet property="nameToEdit" destination="D4F-gl-7Zi" id="zOQ-PG-LS5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hv5-Kw-INy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

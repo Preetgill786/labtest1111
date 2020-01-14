@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9B5B544B23CE0D8700AF32AA /* tableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B544A23CE0D8700AF32AA /* tableCell.swift */; };
+		9B5B544D23CE266200AF32AA /* EditItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B544C23CE266200AF32AA /* EditItem.swift */; };
 		9B69C8BC23CCA830005DF372 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B69C8BB23CCA830005DF372 /* AppDelegate.swift */; };
 		9B69C8BE23CCA830005DF372 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B69C8BD23CCA830005DF372 /* SceneDelegate.swift */; };
 		9B69C8C023CCA830005DF372 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B69C8BF23CCA830005DF372 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		9B5B544A23CE0D8700AF32AA /* tableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableCell.swift; sourceTree = "<group>"; };
+		9B5B544C23CE266200AF32AA /* EditItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItem.swift; sourceTree = "<group>"; };
 		9B69C8B823CCA830005DF372 /* Labtest1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Labtest1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B69C8BB23CCA830005DF372 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B69C8BD23CCA830005DF372 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				9B69C8C423CCA830005DF372 /* Labtest1.xcdatamodeld */,
 				9B69C8DC23CCC79D005DF372 /* addItem.swift */,
 				9B5B544A23CE0D8700AF32AA /* tableCell.swift */,
+				9B5B544C23CE266200AF32AA /* EditItem.swift */,
 			);
 			path = Labtest1;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B5B544D23CE266200AF32AA /* EditItem.swift in Sources */,
 				9B69C8D423CCBD48005DF372 /* Data+CoreDataClass.swift in Sources */,
 				9B69C8C023CCA830005DF372 /* ViewController.swift in Sources */,
 				9B5B544B23CE0D8700AF32AA /* tableCell.swift in Sources */,
