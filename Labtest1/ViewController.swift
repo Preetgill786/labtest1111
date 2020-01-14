@@ -50,8 +50,12 @@ extension ViewController:UITableViewDataSource
         return stData.count
     }
     
+    func tableView(_ tableView: UITableView,heightForRowAt indexPath: IndexPath) -> CGFloat{
+        return 200
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell=tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell=tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! tableCell
         //cell.textLabel?.text = studentDetails[indexPath.row]
         
         let dateFormatter = DateFormatter()
@@ -59,7 +63,11 @@ extension ViewController:UITableViewDataSource
            dateFormatter.timeStyle = .none
         
         let value = stData[indexPath.row]
-        cell.textLabel!.text = value.name! + ", " + String(value.fees) + ", " + String(value.age) + ", " + dateFormatter.string(from: value.date!)
+        //cell.textLabel!.text = value.name! + ", " + String(value.fees) + ", " + String(value.age) + ", " + dateFormatter.string(from: value.date!)
+        cell.stuName.text = value.name!
+         cell.stuAge.text = String(value.age)
+        cell.stuFees.text = String(value.age)
+        cell.stuDate.text = dateFormatter.string(from: value.date!)
 
         return cell
     }
