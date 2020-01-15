@@ -25,6 +25,7 @@ class EditItem: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchData()
        let dateFormatter = DateFormatter()
               dateFormatter.dateStyle = .short
               dateFormatter.timeStyle = .none
