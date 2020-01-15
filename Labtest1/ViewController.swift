@@ -43,7 +43,7 @@ class ViewController: UIViewController {
        
     }
 
-extension ViewController:UITableViewDataSource
+extension ViewController:UITableViewDelegate, UITableViewDataSource
 {
     //dasda kinia rows ne ik particular section ch
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,7 +51,7 @@ extension ViewController:UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView,heightForRowAt indexPath: IndexPath) -> CGFloat{
-        return 200
+        return 400
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,7 +66,7 @@ extension ViewController:UITableViewDataSource
         //cell.textLabel!.text = value.name! + ", " + String(value.fees) + ", " + String(value.age) + ", " + dateFormatter.string(from: value.date!)
         cell.stuName.text = value.name!
          cell.stuAge.text = String(value.age)
-        cell.stuFees.text = String(value.age)
+        cell.stuFees.text = String(value.fees)
         cell.stuDate.text = dateFormatter.string(from: value.date!)
 
         return cell
@@ -92,7 +92,31 @@ extension ViewController:UITableViewDataSource
         }
         
     }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 300
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+   
+    
+    let dateFormatter = DateFormatter()
+             dateFormatter.dateStyle = .short
+             dateFormatter.timeStyle = .none
+          
+
+    if let viewController = storyboard?.instantiateViewController(identifier: "EditItem") as? EditItem {
+        viewController.index =  indexPath.row
+        viewController.sName = stData[indexPath.row].name!
+        viewController.sAge = Int(stData[indexPath.row].age)
+         viewController.sFees = Double(stData[indexPath.row].fees)
+        viewController.sDate =  stData[indexPath.row].date!
+        print(stData[indexPath.row].name!)
+       
+       //   viewController.
+        navigationController?.pushViewController(viewController, animated: true)
+        //print("hello")
+    }
+
     
 }
 
-
+}
