@@ -29,7 +29,7 @@ class EditItem: UIViewController {
        let dateFormatter = DateFormatter()
               dateFormatter.dateStyle = .short
               dateFormatter.timeStyle = .none
-        
+        //getting values from text fields
         nameToEdit.text = sName
         editAge.text = String(sAge)
         editFees.text = String(sFees)
@@ -49,9 +49,9 @@ class EditItem: UIViewController {
                dateFormatter.timeStyle = .none
         print(stData[index])
       
-          updateFunc(student: stData[index], name: nameToEdit.text!,age : Int32(editAge.text!)!, fees : Double(editFees.text!)!, date : Date())
+        updateFunc(student: stData[index], name: nameToEdit.text!,age : Int32(editAge.text!)!, fees : Double(editFees.text!)!, date : dateFormatter.date(from: editDate.text!)!)
         
-        self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popToRootViewController(animated: true)//go back to main page after pressing save btn
         
     }
     
@@ -84,8 +84,7 @@ class EditItem: UIViewController {
                 do {
                     try context.save()
                 } catch {
-                    // Replace this implementation with code to handle the error appropriately.
-                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                   
                     let nserror = error as NSError
                     fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
                 }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//class for table cell
 class tableCell: UITableViewCell {
 
     @IBOutlet weak var stuName: UITextField!
@@ -18,15 +18,5 @@ class tableCell: UITableViewCell {
     @IBOutlet weak var stuDate: UITextField!
     
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+   
 }

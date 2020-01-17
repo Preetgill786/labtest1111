@@ -20,8 +20,8 @@ class addItem: UIViewController {
     
     
      // context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-      var student:[NSManagedObjectContext] = []
-       var managedContext: NSManagedObjectContext!
+//      var student:[NSManagedObjectContext] = []
+//       var managedContext: NSManagedObjectContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,7 @@ class addItem: UIViewController {
     }
     
     @IBAction func saveFunc(_ sender: UIBarButtonItem) {
+        //getting values from text fields
                      let stNane = name.text
                      let stAge = age.text
                      let stFees = fees.text
@@ -41,9 +42,11 @@ class addItem: UIViewController {
               self.save(name: stNane!,age : Int32(stAge!)!, fees : Double(stFees!)!, date : dateFormatter.date(from: stDate!)!)
               
               if let navController = self.navigationController {
-                  navController.popViewController(animated: true)
+                  navController.popViewController(animated: true) //go back to view controller after pressing save buuton
               }
     }
+    
+    //save data into core data
     func save(name: String, age : Int32, fees : Double, date : Date)
      {
          guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -55,7 +58,7 @@ class addItem: UIViewController {
          let entity = NSEntityDescription.entity(forEntityName: "Data", in: managedContext)!
      let data = NSManagedObject(entity: entity,insertInto: managedContext)
 
-         
+      
      data.setValue(age, forKey: "age")
      data.setValue(date, forKey: "date")
      data.setValue(name, forKey: "name")
